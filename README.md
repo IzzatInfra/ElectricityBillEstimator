@@ -34,3 +34,26 @@ _Add your screenshots here if available._
 
 **Final cost formula:**
 Final Cost = Total Charges - (Total Charges × Rebate%)
+
+---
+
+## 💻 Tech Stack
+
+- Android Studio + Kotlin
+- ConstraintLayout
+- SQLite (Local DB)
+- Material Design Components
+
+---
+
+👤 About
+Name: Nur Izzat Saharudin
+Student ID: 2022694896
+Course: ICT602 – Mobile Technology
+Year: 2025
+
+---
+
+📜 License
+This project is for educational use only.
+© 2025 Nur Izzat Saharudin. All rights reserved.

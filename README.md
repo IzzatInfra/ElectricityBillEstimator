@@ -32,7 +32,9 @@ An Android mobile application to estimate monthly electricity bills based on usa
 - ![image](https://github.com/user-attachments/assets/eeb1d243-6111-4c53-9f3d-ce816114f3f6)
 
 # About
-- 
+- <img src="https://github.com/user-attachments/assets/fa620f4f-c558-4622-8b5d-55f03406fec5" alt="image" height="400"/>
+
+
 
 
 

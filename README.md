@@ -33,6 +33,7 @@ _Add your screenshots here if available._
 | 601 and above     | 54.6 sen       |
 
 **Final cost formula:**
+
 Final Cost = Total Charges - (Total Charges × Rebate%)
 
 ---
@@ -46,14 +47,14 @@ Final Cost = Total Charges - (Total Charges × Rebate%)
 
 ---
 
-👤 About
-Name: Nur Izzat Saharudin
-Student ID: 2022694896
-Course: ICT602 – Mobile Technology
-Year: 2025
+## 👤 About
+- Name: Nur Izzat Saharudin
+- Student ID: 2022694896
+- Course: ICT602 – Mobile Technology
+- Year: 2025
 
 ---
 
-📜 License
+## 📜 License
 This project is for educational use only.
 © 2025 Nur Izzat Saharudin. All rights reserved.

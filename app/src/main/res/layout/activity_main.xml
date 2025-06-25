@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_main_gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_main_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:padding="24dp">
 
     <Button
@@ -13,7 +18,7 @@
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="#03FFE7"
-        android:text="About"
+        android:text="@string/about"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:text="Select Month:"
+        android:text="@string/select_month"
+        android:textColor="#455A64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,6 +39,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Enter Units Used (kWh):"
+        android:text="@string/enter_units_used_kwh"
+        android:textColor="#455A64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinnerMonth" />
 
@@ -52,19 +60,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:hint="e.g. 250"
+        android:autofillHints="eg: 250"
+        android:hint="@string/e_g_250"
         android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#455A64"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/labelUnits" />
+        app:layout_constraintTop_toBottomOf="@id/labelUnits"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <TextView
         android:id="@+id/labelRebate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Select Rebate (%):"
+        android:text="@string/select_rebate"
+        android:textColor="#455A64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextUnits" />
 
@@ -73,10 +86,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/labelRebate" />
+        app:layout_constraintTop_toBottomOf="@id/labelRebate"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/buttonCalculate"
@@ -84,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:backgroundTint="#03FFE7"
-        android:text="Calculate"
+        android:text="@string/calculate"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +110,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Total Charges: RM 0.00"
+        android:text="@string/total_charges_rm_0_00"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -107,7 +122,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Final Cost (After Rebate): RM 0.00"
+        android:text="@string/final_cost_after_rebate_rm_0_00"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -120,10 +135,11 @@
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#03FFE7"
-        android:text="View History"
+        android:text="@string/view_history"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textFinalCost" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

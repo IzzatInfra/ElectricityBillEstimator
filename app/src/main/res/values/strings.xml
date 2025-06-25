@@ -3,6 +3,15 @@
         <string name="view_on_github">View on GitHub</string>
         <string name="github_url">https://github.com/IzzatInfra/ElectricityBillEstimator.git</string>
     <string name="saved_bills">Saved Bills</string>
+    <string name="about">About</string>
+    <string name="calculate">Calculate</string>
+    <string name="view_history">View History</string>
+    <string name="e_g_250">e.g. 250</string>
+    <string name="select_month">Select Month:</string>
+    <string name="select_rebate">Select Rebate (%):</string>
+    <string name="enter_units_used_kwh">Enter Units Used (kWh):</string>
+    <string name="total_charges_rm_0_00">Total Charges: RM 0.00</string>
+    <string name="final_cost_after_rebate_rm_0_00">Final Cost (After Rebate): RM 0.00</string>
     <string-array name="month_array">
         <item>January</item>
         <item>February</item>

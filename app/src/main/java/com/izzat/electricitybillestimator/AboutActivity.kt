@@ -12,7 +12,7 @@ class AboutActivity : AppCompatActivity() {
         setContentView(R.layout.activity_about)
 
         val textGithub = findViewById<TextView>(R.id.textGithub)
-        textGithub.text = "https://github.com/yourusername/electricitybillestimator"
+        textGithub.text = "https://github.com/IzzatInfra/ElectricityBillEstimator"
         Linkify.addLinks(textGithub, Linkify.WEB_URLS)
     }
 }

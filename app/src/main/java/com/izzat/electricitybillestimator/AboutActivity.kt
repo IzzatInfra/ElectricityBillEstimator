@@ -1,9 +1,10 @@
 package com.izzat.electricitybillestimator
 
+import android.content.Intent
 import android.os.Bundle
-import android.text.util.Linkify
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 
 class AboutActivity : AppCompatActivity() {
 
@@ -12,7 +13,12 @@ class AboutActivity : AppCompatActivity() {
         setContentView(R.layout.activity_about)
 
         val textGithub = findViewById<TextView>(R.id.textGithub)
-        textGithub.text = "https://github.com/IzzatInfra/ElectricityBillEstimator"
-        Linkify.addLinks(textGithub, Linkify.WEB_URLS)
+        textGithub.text = getString(R.string.view_on_github)
+
+        textGithub.setOnClickListener {
+            val url = getString(R.string.github_url)
+            val intent = Intent(Intent.ACTION_VIEW, url.toUri())
+            startActivity(intent)
+        }
     }
 }

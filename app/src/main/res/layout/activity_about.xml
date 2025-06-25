@@ -53,7 +53,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="400dp"
-            android:text="View on GitHub"
+            android:text="@string/view_on_github"
             android:textAlignment="center"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="18sp"

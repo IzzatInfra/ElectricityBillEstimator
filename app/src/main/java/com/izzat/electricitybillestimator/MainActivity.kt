@@ -1,14 +1,20 @@
 package com.izzat.electricitybillestimator
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.OnBackPressedCallback
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var dbHelper: DatabaseHelper
+    private var backPressedTime: Long = 0
+    private lateinit var backToast: Toast
 
+
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) // Load XML layout
@@ -81,6 +87,19 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }
+        //Back press 2 times
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                    backToast.cancel()
+                    finish() // or activity?.finish() if inside fragment
+                } else {
+                    backToast = Toast.makeText(this@MainActivity, "Press back again to exit", Toast.LENGTH_SHORT)
+                    backToast.show()
+                    backPressedTime = System.currentTimeMillis()
+                }
+            }
+        })
 
     }
 
@@ -112,4 +131,5 @@ class MainActivity : AppCompatActivity() {
 
         return total
     }
+
 }

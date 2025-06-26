@@ -12,6 +12,21 @@
     <string name="enter_units_used_kwh">Enter Units Used (kWh):</string>
     <string name="total_charges_rm_0_00">Total Charges: RM 0.00</string>
     <string name="final_cost_after_rebate_rm_0_00">Final Cost (After Rebate): RM 0.00</string>
+    <string name="_0">0%</string>
+    <string name="_1">1%</string>
+    <string name="_2">2%</string>
+    <string name="_3">3%</string>
+    <string name="_4">4%</string>
+    <string name="_5">5%</string>
+    <string name="f_details">Click on below record to view full bill details</string>
+    <string name="cp_right">© 2025 Nur Izzat Saharudin. All rights reserved.</string>
+    <string name="name">Name: Nur Izzat Saharudin</string>
+    <string name="sid">Student ID: 2022694896</string>
+    <string name="course">Course: ICT602 - Mobile Technology</string>
+    <string name="icon">icon</string>
+    <string name="icon1">icon</string>
+    <string name="icon2">icon</string>
+    <string name="icon3">icon</string>
     <string-array name="month_array">
         <item>January</item>
         <item>February</item>

@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var dbHelper: DatabaseHelper
     private var backPressedTime: Long = 0
     private lateinit var backToast: Toast
-
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         // Find views
         val monthSpinner = findViewById<Spinner>(R.id.spinnerMonth)
-        val rebateSpinner = findViewById<Spinner>(R.id.spinnerRebate)
+        val radioGroupRebate = findViewById<RadioGroup>(R.id.radioGroupRebate)
         val editTextUnits = findViewById<EditText>(R.id.editTextUnits)
         val buttonCalculate = findViewById<Button>(R.id.buttonCalculate)
         val textTotalCharges = findViewById<TextView>(R.id.textTotalCharges)
@@ -39,16 +39,6 @@ class MainActivity : AppCompatActivity() {
         monthAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         monthSpinner.adapter = monthAdapter
 
-        // Setup rebate spinner
-        val rebateAdapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.rebate_array,
-            android.R.layout.simple_spinner_item
-        )
-        rebateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        rebateSpinner.adapter = rebateAdapter
-
-        // On calculate button click
         buttonCalculate.setOnClickListener {
             val unitText = editTextUnits.text.toString()
 
@@ -57,9 +47,17 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            val selectedId = radioGroupRebate.checkedRadioButtonId
+            if (selectedId == -1) {
+                Toast.makeText(this, "Please select a rebate", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val selectedRadioButton = findViewById<RadioButton>(selectedId)
+            val rebateText = selectedRadioButton.text.toString().replace("%", "")
+            val rebatePercent = rebateText.toDouble() / 100
+
             val units = unitText.toInt()
-            val rebatePercentStr = rebateSpinner.selectedItem.toString().replace("%", "")
-            val rebatePercent = rebatePercentStr.toDouble() / 100
             val totalCharges = calculateElectricityCharges(units)
             val finalCost = totalCharges - (totalCharges * rebatePercent)
             val month = monthSpinner.selectedItem.toString()
@@ -74,6 +72,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Error saving to database", Toast.LENGTH_SHORT).show()
             }
         }
+
 
         // Open history screen
         buttonViewHistory.setOnClickListener {
